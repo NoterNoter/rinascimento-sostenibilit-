@@ -12,6 +12,7 @@ em{
 .h2{
   font-family: $reckless;
   font-size: $f_56;
+  font-weight: 200;
 }
 
 .h3{
@@ -81,14 +82,17 @@ main{
 .sectione_one_wrapper{
   display: flex;
   .section_one_img_container{
-    width: 50%;
+    width: 40%;
   }
   .sectione_one_text_container{
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
     padding-top: $spacing*4;
     padding-bottom: $spacing*4;
     .section_one_text_box{
-      width: 90%;
+      width: 80%;
       .section_one_body{
         margin: $spacing*8 0;
         display: flex;
