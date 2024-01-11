@@ -385,12 +385,12 @@ main{
     display: flex;
     gap: 0px;
     .protagonista_card{
-      height: 480px;
+      position: relative;
+      @include aspect(9,14);
       display: flex;
       gap: $spacing*3;
       flex-direction: column;
       justify-content: flex-end;
-      padding: $spacing*5;
       width: 25%;
       border: 1px solid $black;
       transition: 0.3s ease-in-out;
@@ -398,20 +398,31 @@ main{
         background-color: $green;
         border: 1px solid $green;
         color: $white;
+        .circle_icon circle{
+          fill: white;
+        }
       }
       &:not(:last-child){
         border-right: none;
-      }
-      .card_title_wrapper{
-        height: 60px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
       }
       .card_title{
         font-size: $f_20;
         font-weight: 600;
       }
+      .circle_icon{
+        position: absolute;
+        top: 70px;
+        right: 70px;
+      }
+    }
+    .card_content_wrapper{
+      position: absolute;
+      padding: $spacing*5;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing*3;
+      justify-content: flex-start;
+      height: 60%;
     }
   }
 }
