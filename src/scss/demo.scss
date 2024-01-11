@@ -251,7 +251,7 @@ main{
 
 .section_accordion_uno{
   padding: 0px $spacing*4 $spacing*23 $spacing*4;
-  .accordion_uno_container{
+  .accordion_wrapper{
     @include container_small;
   }
   .accordion{
@@ -263,7 +263,6 @@ main{
     transition: 0.4s;
     border: none;
     outline: none;
-    border-top: $border;
     background-color: $white;
     .accordion_button_container{
       display: flex;
@@ -276,6 +275,9 @@ main{
         align-items: center;
       }
     }
+  }
+  .accordion_border{
+    border-top: $border;
   }
   .accordion_text{
     font-family: $poppins;
@@ -296,7 +298,7 @@ main{
     }
     .accordion_inner_row{
       display: flex;
-      gap: $spacing*3;
+      gap: $spacing*4;
       .row_text{
         width: 70%;
         color: #808080;
@@ -323,6 +325,23 @@ main{
 }
 
 
+.accordion_icon_open{
+  stroke: $black;
+  transition: 0.4s ease-out;
+}
+
+.accordion_icon_close{
+  display: none;
+}
+
+.active{
+  .accordion_icon_open{
+    display: none;
+  }
+  .accordion_icon_close{
+    display: block;
+  }
+}
 
 .accordion:hover {
   .accordion_title{
@@ -330,6 +349,9 @@ main{
   }
   .accordion_img_container{
     opacity: 1;
+  }
+  .accordion_icon_open{
+    stroke: $green;
   }
 }
 
@@ -339,3 +361,9 @@ main{
   }
 }
 
+
+.video_hero_container{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
