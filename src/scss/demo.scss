@@ -381,7 +381,7 @@ main{
     }
   }
   .cards_wrapper{
-    @include container;
+    @include container_big;
     display: flex;
     gap: 0px;
     .protagonista_card{
@@ -393,6 +393,12 @@ main{
       padding: $spacing*5;
       width: 25%;
       border: 1px solid $black;
+      transition: 0.3s ease-in-out;
+      &:hover{
+        background-color: $green;
+        border: 1px solid $green;
+        color: $white;
+      }
       &:not(:last-child){
         border-right: none;
       }
@@ -407,6 +413,5 @@ main{
         font-weight: 600;
       }
     }
-
   }
 }
