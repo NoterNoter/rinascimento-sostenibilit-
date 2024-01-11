@@ -383,6 +383,7 @@ main{
   .cards_wrapper{
     @include container_big;
     display: flex;
+    flex-wrap: wrap;
     gap: 0px;
     .protagonista_card{
       position: relative;
