@@ -214,7 +214,7 @@ main{
 .section_scelta{
   padding: $spacing*20 $spacing*3;
   .section_scelta_container{
-    @include container;
+    @include container_big;
     display: flex;
     flex-direction: column;
     justify-content: center;
