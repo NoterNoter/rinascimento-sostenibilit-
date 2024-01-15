@@ -20,6 +20,10 @@ em{
   font-size: $f_36;
 }
 
+.subtitle{
+  font-size: $f_20;
+}
+
 main{
   font-size: $f_16;
   color: $black;
@@ -119,7 +123,7 @@ main{
 }
 
 .section_principi{
-  background-color: $grey;
+  background-color: $lighgrey;
   padding-top: $spacing*11;
   display: flex;
   flex-direction: column;
@@ -142,6 +146,9 @@ main{
         justify-content: center;
         align-items: center;
         gap: $spacing*3;
+        p{
+          font-size: $f_20;
+        }
       }
     }
   }
@@ -220,6 +227,9 @@ main{
     justify-content: center;
     align-items: center;
     gap: $spacing*6;
+    .section_scelta_label{
+      font-size: $f_20;
+    }
   }
   .span_video{
     display: inline-block;
@@ -363,7 +373,7 @@ main{
 
 
 
-.section_cards_protagonista{
+.section_cards{
   padding: $spacing*20 $spacing*4;
   display: flex;
   flex-direction: column;
@@ -379,6 +389,9 @@ main{
       align-items: center;
       gap: $spacing*2;
     }
+  }
+  .section_cards_container_bottom{
+    @include container_big;
   }
   .cards_wrapper{
     @include container_big;
@@ -427,3 +440,157 @@ main{
     }
   }
 }
+
+.cards_photo_container{
+  display: flex;
+  justify-content: space-between;
+  @include container_big;
+  gap: $spacing*4;
+  .single_card_link_wrapper{
+    color: $black;
+    .single_card{
+      display: flex;
+      flex-direction: column;
+      gap: $spacing*5;
+      .single_card_content{
+        display: flex;
+        flex-direction: column;
+        gap: $spacing*2;
+        .single_card_text{
+          display: flex;
+          flex-direction: column;
+          gap: $spacing*3;
+          .title{
+            font-size: $f_36;
+            font-family: $reckless;
+          }
+          .text{
+            color: #666666;
+          }
+        }
+        .single_card_link{
+          p{
+            font-size: $f_14;
+            text-transform: uppercase;
+            color: $green;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// tabs
+
+.tabs_section{
+  padding: 0px $spacing*4;
+  background-color: #F5F5F5;
+  border-top: 1px solid #E5E5E5;
+  // padding-top: $spacing*2;
+  padding-bottom: $spacing*20;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing*7;
+  .tabs_container{
+    @include container_small;
+    top: 86px;
+    position: sticky;
+    background-color: #F5F5F5;
+  }
+  .tabs_buttons{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .tab_link_wrapper{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: $spacing*7;
+      .tab_link{
+        text-transform: uppercase;
+        font-size: $f_18;
+        font-weight: 400;
+        color: $darkgrey;
+        cursor: pointer;
+        &.active{
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .tab_content{
+    animation: fadeEffect 1s;
+    @include container_small;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing*7;
+    .tab_headline{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: $spacing*3;
+    }
+    .tab_text{
+      text-align: center;
+    }
+    .tab_inner_content{
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+    }
+  }
+}
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.tab_text_img_component{
+  padding: $spacing*7 0px;
+  border-top: 1px solid $black;
+  &:not(:first-child){
+    border-bottom: 1px solid $black;
+  }
+  display: flex;
+  gap: $spacing*6;
+  .img_container{
+    width: 50%;
+  }
+  .content_container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing*4;
+    .title{
+      font-size: $f_36;
+      font-family: $reckless;
+      font-weight: 400;
+    }
+  }
+  .questions_container{
+    display: flex;
+    flex-direction: column;
+    gap: $spacing*2;
+    .question{
+      margin-bottom: $spacing;
+      font-weight: 600;
+    }
+    .green_label{
+      font-size: $f_14;
+      text-transform: uppercase;
+      color: $green;
+      font-weight: 600;
+    }
+  }
+  .btn_acquista{
+    background-color: $black;
+    padding: 10px 24px;
+    text-transform: uppercase;
+    color: $white;
+    width: fit-content;
+  }
+}
+

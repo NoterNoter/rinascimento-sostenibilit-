@@ -160,7 +160,6 @@
 // });
 
 
-
 var acc = document.getElementsByClassName("accordion");
 var i;
 
@@ -175,3 +174,50 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+
+
+// tabs
+
+// function initJs(){
+// let accordions = document.querySelectorAll("tab_accordion");
+// var i;
+
+// for (i = 0; i < acc.length; i++) {
+//   acc[i].addEventListener("click", function() {
+//     this.classList.toggle("active");
+//     var panel = this.nextElementSibling;
+//     if (panel.style.maxHeight) {
+//       panel.style.maxHeight = null;
+//     } else {
+//       panel.style.maxHeight = panel.scrollHeight + "px";
+//     }
+//   });
+// }
+// }
+
+let navTabs = document.querySelectorAll(".tab_link");
+
+navTabs.forEach((item)=>{
+  let tabId = item.getAttribute("tab");
+
+  item.addEventListener("click", function(evt){
+      let i;
+      let tabContent = document.getElementsByClassName("tab_content");
+      for (i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = "none";
+        // navTabs[i].classList.remove("nav-active");
+      }
+      for (i = 0; i < navTabs.length; i++) {
+        navTabs[i].className = navTabs[i].className.replace(" active", "");
+      }
+
+      document.getElementById(tabId).style.display = "flex";
+      evt.currentTarget.className += " active";
+      
+      // initJs()
+
+  });
+})
+
+
