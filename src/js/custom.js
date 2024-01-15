@@ -1,9 +1,9 @@
-// import { gsap } from 'gsap';
-// import { SplitText } from "gsap/SplitText";
-// import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from 'gsap';
+import { SplitText } from "gsap/SplitText";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// gsap.registerPlugin(ScrollToPlugin, ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger, SplitText);
 
 
 // // parrallax monete
@@ -213,7 +213,8 @@ navTabs.forEach((item)=>{
       }
 
       document.getElementById(tabId).style.display = "flex";
-      evt.currentTarget.className += " active";
+      let currentTab = document.querySelector(`[tab="${tabId}"]`)
+      currentTab.classList.add("active")
       
       // initJs()
 
@@ -221,3 +222,10 @@ navTabs.forEach((item)=>{
 })
 
 
+let arrows = document.querySelectorAll(".scroll_up_btn");
+
+arrows.forEach(function(arrow) {
+  arrow.addEventListener("click", function() {
+    gsap.to(window, { duration: 1, scrollTo: 0 });
+  });
+});

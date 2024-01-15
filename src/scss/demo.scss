@@ -771,10 +771,14 @@ main{
     }
   }
   .start_btn{
-    a{
+    .scroll_up_btn{
+      cursor: pointer;
       text-decoration: underline;
       color: $black;
       font-weight: 800;
+      &:hover{
+        opacity: 0.8;
+      }
     }
   }
 }
