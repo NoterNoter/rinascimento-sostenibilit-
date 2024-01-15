@@ -746,3 +746,35 @@ main{
     }
   }
 }
+
+
+.next_tab_component{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing*11;
+  .next_btn_container{
+    display: flex;
+    flex-direction: column;
+    gap: $spacing*2;
+    .title{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: $spacing;
+      h4{
+        cursor: pointer;
+        font-family: $reckless;
+        font-size: $f_36;
+      }
+    }
+  }
+  .start_btn{
+    a{
+      text-decoration: underline;
+      color: $black;
+      font-weight: 800;
+    }
+  }
+}
