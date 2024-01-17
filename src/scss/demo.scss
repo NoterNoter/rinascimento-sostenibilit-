@@ -325,11 +325,11 @@ main{
 
 
 .accordion_img_container{
-  @include aspect(16, 9);
+  @include aspect(16, 11);
   width: 220px;
   position: absolute;
-  top: -130px;
-  left: 50%;
+  top: -150px;
+  left: 43%;
   transition: 0.4s ease-out;
   opacity: 0;
 }
@@ -784,4 +784,266 @@ main{
       }
     }
   }
+}
+
+
+
+// mobile
+
+@media only screen and (max-width: 768px) {
+
+  main{
+    font-size: $f_14;
+  }
+
+.hero_container{
+  @include aspect(9, 16);
+  padding: 0px 14px;
+  .hero_title_container{
+    h1{
+      font-size: $f_56;
+      width: 30%;
+    }
+    p{
+      width: 30%;
+      text-align: center;
+    }
+  }
+}
+
+.sectione_one{
+  padding: $spacing*8 $spacing*4 $spacing*4 $spacing*4;
+  .sectione_one_wrapper{
+    flex-direction: column;
+    .sectione_one_text_container{
+      width: 100%;
+      padding-top: 0px;
+      padding-bottom: 40px;
+      .section_one_text_box{
+        width: 100%;
+        .section_one_body{
+          margin: $spacing*3 0px;
+          gap: $spacing*3;
+          .h2{
+            font-size: 32px;
+          }
+        }
+        .section_one_link{
+          font-size: $f_16;
+        }
+      }
+    }
+    .section_one_img_container{
+      width: 100%;
+    }
+  }
+}
+
+.section_principi{
+  padding-top: 52px;
+  gap: 52px;
+  .section_principi_headline_container{
+    .section_principi_headline_wrapper{
+      gap: 16px;
+      .icon_label{
+        gap: 8px;
+        p{
+          font-size: 16px;
+        }
+      }
+      .h2{
+        font-size: 32px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.section_scelta{
+  padding: 64px 24px;
+  .section_scelta_container{
+    gap: 16px;
+    .section_scelta_headline{
+      .h1{
+        font-size: 45px;
+      }
+      .span_video{
+        width: 120px;
+      }
+      .span_icon{
+        svg{
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+  .section_scelta_label{
+    p{
+      font-size: 16px;
+    }
+  }
+}
+
+.section_accordion{
+  padding-bottom: 64px;
+  .accordion_wrapper{
+    .accordion{
+      padding: 24px 0px;
+      .accordion_button_container{
+        .accordion_img_container{
+          display: none;
+        }
+        .accordion_title_container{
+          .accordion_title{
+            font-size: 32px;
+          }
+          .accordion_icon_open{
+            width: 16px;
+          }
+          .accordion_icon_close{
+            width: 16px;
+          }
+        }
+        .accordion_text{
+          font-size: 14px;
+        }
+      }
+    }
+    .accordion_inner{
+      .accordion_inner_container{
+        padding-bottom: 24px;
+        .accordion_inner_row{
+          flex-direction: column;
+          &:not(:last-child){
+            margin-bottom: 16px;
+          }
+          gap: 8px;
+          .row_text{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.video_full_screen{
+  .hero_container{
+    @include aspect(16, 9);
+    padding: 0px 14px;
+    .hero_title_container{
+      .h1{
+        font-size: 32px;
+      }
+    }
+  }
+}
+
+.section_cards{
+  padding: 64px 32px;
+  .section_cards_container_top{
+    .section_cards_headline{
+      .subtitle{
+        font-size: 16px;
+      }
+      .h2{
+        font-size: 32px;
+      }
+    }
+  }
+}
+
+.section_cards{
+  .section_cards_container_bottom{
+    overflow-x: scroll;
+    .cards_wrapper{
+      flex-direction: row !important;
+      flex-wrap: wrap !important;
+      .protagonista_card{
+        width: 100%;
+      }
+    }
+  }
+}
+
+.last_section_cards{
+  gap: 40px;
+  .section_cards_container_bottom{
+    overflow-x: scroll;
+    .cards_photo_container{
+      gap: 24px;
+      .single_card{
+        width: 280px;
+        gap: 16px;
+        .single_card_content{
+          .single_card_text{
+            gap: 16px;
+            .title{
+              font-size: 24px;
+            }
+          }
+          .single_card_link{
+            p{
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.section_cards_container_bottom::-webkit-scrollbar{
+  display: none;
+}
+
+.tabs_section{
+  gap: 40px;
+  .tabs_container{
+    top: 21px;
+    .tabs_buttons{
+      height: 50px;
+      .tab_link_wrapper{
+        gap: 24px;
+        .tab_link{
+          font-size: 16px;
+          gap: 8px;
+        }
+      }
+    }
+  }
+  .tab_content{
+    .tab_headline{
+      .h2{
+        font-size: 32px;
+      }
+    }
+  }
+}
+
+.tab_text_img_component{
+  padding: 32px 0px;
+  flex-direction: column;
+  gap: 24px;
+  .img_container{
+    width: 100%;
+    padding-bottom: 80%;
+    position: relative;
+    overflow: hidden;
+    border-radius: $radius;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .content_container{
+    width: 100%;
+  }
+}
+   
 }
