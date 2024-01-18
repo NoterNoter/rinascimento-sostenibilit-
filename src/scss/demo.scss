@@ -956,6 +956,7 @@ main{
   padding: 64px 32px;
   .section_cards_container_top{
     .section_cards_headline{
+      padding: 0px 32px;
       .subtitle{
         font-size: 16px;
       }
@@ -967,10 +968,18 @@ main{
 }
 
 .section_cards{
+  padding-left: 0px;
+  padding-right: 0px;
   .section_cards_container_bottom{
     overflow-x: unset;
     .cards_wrapper{
       flex-wrap: nowrap !important;
+      .first_card_protagonista{
+        margin-left: 32px !important;
+      }
+      .last_card_protagonista{
+        margin-right: 32px !important;
+      }
       .protagonista_card{
         width: 80vw !important;
         @include aspect(3, 4);
@@ -986,11 +995,14 @@ main{
 
 .last_section_cards{
   gap: 40px;
-  padding: 64px 32px;
+  padding: 64px 0px;
   .section_cards_container_bottom{
     overflow-x: scroll;
     .cards_photo_container{
       gap: 24px;
+      &:first-child{
+        margin-left: 32px;
+      }
       .single_card{
         width: 280px;
         gap: 16px;
@@ -1008,6 +1020,9 @@ main{
           }
         }
       }
+      .card_careguide{
+        margin-right: 32px !important;
+      }
     }
   }
 }
@@ -1019,7 +1034,10 @@ main{
 .tabs_section{
   gap: 40px;
   padding-bottom: 40px;
+  padding-left: 0px;
+  padding-right: 0px;
   .tabs_container{
+    padding: 0px 32px;
     top: 21px;
     .tabs_buttons{
       height: 50px;
@@ -1033,6 +1051,7 @@ main{
     }
   }
   .tab_content{
+    padding: 0px 32px;
     .tab_headline{
       .h2{
         font-size: 32px;
@@ -1144,6 +1163,11 @@ main{
 
 .careguide_tab{
   gap: 64px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  .tab_headline{
+    padding: 0px 32px;
+  }
   .tab_inner_content{
     .section_cards{
       padding-top: 0px;
@@ -1173,18 +1197,21 @@ main{
       }
     }
   }
-  .accordion_careguide{
-    .accordion_wrapper{
-      .accordion_inner{
-        .accordion_inner_container{
-          flex-direction: column !important;
-          .accordion_inner_img{
-            img{
+  .tab_accordion_component{
+    padding: 0px 32px;
+    .accordion_careguide{
+      .accordion_wrapper{
+        .accordion_inner{
+          .accordion_inner_container{
+            flex-direction: column !important;
+            .accordion_inner_img{
+              img{
+                display: none;
+              }
+            }
+            .accordion_inner_img::before{
               display: none;
             }
-          }
-          .accordion_inner_img::before{
-            display: none;
           }
         }
       }
