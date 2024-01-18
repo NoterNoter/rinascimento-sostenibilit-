@@ -162,6 +162,7 @@ main{
   .principi_card{
     @include aspect(3, 4);
     width: 33.33%;
+    min-height: 700px;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -209,6 +210,7 @@ main{
       position: absolute;
       z-index: 6;
       bottom: 30px;
+      background-image: none !important;
       .h2{
         color: $white;
         font-style: italic;
@@ -395,7 +397,8 @@ main{
   .cards_wrapper{
     @include container_big;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
     gap: 0px;
     .protagonista_card{
       position: relative;
@@ -404,7 +407,9 @@ main{
       gap: $spacing*3;
       flex-direction: column;
       justify-content: flex-end;
-      width: 25%;
+      // width: 25%;
+      flex: 1 0 auto;
+      min-width: 230px;
       border: 1px solid $black;
       transition: 0.3s ease-in-out;
       &:hover{
@@ -436,6 +441,7 @@ main{
       gap: $spacing*3;
       justify-content: flex-start;
       height: 60%;
+      min-height: 350px;
     }
   }
 }
@@ -592,9 +598,15 @@ main{
     display: flex;
     flex-direction: column;
     gap: $spacing*2;
-    .question{
-      margin-bottom: $spacing;
-      font-weight: 600;
+    .question_paragraph{
+      .question{
+        margin-bottom: $spacing;
+        font-weight: 600;
+        color: $black;
+      }
+      p{
+        color: #666666;
+      }
     }
     .green_label{
       font-size: $f_14;
@@ -702,7 +714,7 @@ main{
           }
           p{
             font-size: $f_14;
-            columns: #666666;
+            color: #666666;
             &:not(:last-child){
               margin-bottom: $spacing;
             }
@@ -956,12 +968,17 @@ main{
 
 .section_cards{
   .section_cards_container_bottom{
-    overflow-x: scroll;
+    overflow-x: unset;
     .cards_wrapper{
-      flex-direction: row !important;
-      flex-wrap: wrap !important;
+      flex-wrap: nowrap !important;
       .protagonista_card{
-        width: 100%;
+        width: 80vw !important;
+        @include aspect(3, 4);
+        .card_content_wrapper{
+          .card_title{
+            font-size: 16px;
+          }
+        }
       }
     }
   }
@@ -969,6 +986,7 @@ main{
 
 .last_section_cards{
   gap: 40px;
+  padding: 64px 32px;
   .section_cards_container_bottom{
     overflow-x: scroll;
     .cards_photo_container{
@@ -1000,6 +1018,7 @@ main{
 
 .tabs_section{
   gap: 40px;
+  padding-bottom: 40px;
   .tabs_container{
     top: 21px;
     .tabs_buttons{
@@ -1043,7 +1062,176 @@ main{
   }
   .content_container{
     width: 100%;
+    gap: 24px;
+    .title{
+      font-size: 32px;
+    }
+    .btn_acquista{
+      font-size: 16px;
+    }
+    .btn_scopri{
+      font-size: 16px;
+    }
+  }
+}
+
+.next_tab_component{
+  gap: 40px;
+  .next_btn_container{
+    gap: 8px;
+    p{
+      text-align: center;
+    }
+    .title{
+      font-size: 32px;
+    }
+  }
+  .start_btn{
+    .scroll_up_btn{
+      font-size: 16px;
+    }
+  }
+}
+
+.solo_text_component{
+  padding: 64px 0px;
+}
+
+.tab_accordion_component{
+  .accordion_intro{
+    margin-bottom: 24px;
+    p{
+      font-size: 16px;
+    }
+  }
+  .section_accordion{
+    .accordion_wrapper{
+      .accordion_tab{
+        padding: 16px 0px;
+        .accordion_button_container{
+          .accordion_title_container{
+            p{
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      .accordion_inner{
+        .accordion_inner_container{
+          gap: 24px;
+          flex-direction: column-reverse;
+          .accordion_inner_text{
+            width: 100%;
+            gap: 16px;
+            .question{
+              h6{
+                color: $black;
+              }
+              p{
+                color: #666666;
+              }
+            }
+          }
+          .accordion_inner_img{
+            width: 100%;
+            @include aspect(16,9);
+          }
+        }
+      }
+    }
+  }
+}
+
+.careguide_tab{
+  gap: 64px !important;
+  .tab_inner_content{
+    .section_cards{
+      padding-top: 0px;
+      gap: 16px;
+      padding-bottom: 64px;
+      .section_cards_container_top{
+        .section_cards_headline{
+          .subtitle{
+            font-size: 14px;
+          }
+        }
+      }
+      .section_cards_container_bottom{
+        overflow-x: unset;
+        .cards_wrapper{
+          flex-wrap: nowrap !important;
+          .protagonista_card{
+            width: 80vw !important;
+            @include aspect(3, 4);
+            .card_content_wrapper{
+              .card_title{
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .accordion_careguide{
+    .accordion_wrapper{
+      .accordion_inner{
+        .accordion_inner_container{
+          flex-direction: column !important;
+          .accordion_inner_img{
+            img{
+              display: none;
+            }
+          }
+          .accordion_inner_img::before{
+            display: none;
+          }
+        }
+      }
+    }
   }
 }
    
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .section_principi_cards_container{
+    .principi_cards_wrapper{
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+    }
+    .principi_card{
+      min-width: 600px;
+      background-image: none !important;
+      width: auto;
+      display: flex;
+      &:before{
+        content: none;
+        padding-top: unset;
+      }
+      .card_title_container{
+        position: relative;
+        min-width: 150px;
+        top:0;
+        h2{
+          position: absolute;
+          bottom: 30px;
+          display: flex;
+          align-items: center;
+          transform: rotate(180DEG);
+          left: 35px;
+          writing-mode: vertical-rl;
+          transform-origin: center;
+
+        }
+      }
+      .card_content_container{
+        position: unset;
+        opacity: 1;
+        min-width: 450px;
+        padding: 40px 20px;
+      }
+    }
+  }
 }
