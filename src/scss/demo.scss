@@ -150,6 +150,9 @@ main{
           font-size: $f_20;
         }
       }
+      .h2{
+        text-align: center;
+      }
     }
   }
 }
@@ -219,6 +222,17 @@ main{
     }
   }
 }
+
+.principi_card_slow{
+  background-image: url(../images/content/slow-img.jpeg);
+}
+.principi_card_circular{
+  background-image: url(../images/content/circular-img.jpeg);
+}
+.principi_card_fair{
+  background-image: url(../images/content/fair-img.jpeg);
+}
+
 
 .section_scelta{
   padding: $spacing*20 $spacing*3;
@@ -1237,9 +1251,24 @@ main{
         content: none;
         padding-top: unset;
       }
+      .principi_title_slow{
+        background-image: url(../images/content/slow_img_mobile.png) !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .principi_title_circular{
+        background-image: url(../images/content/circular_img_mobile.png) !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .principi_title_fair{
+        background-image: url(../images/content/fair_img_mobile.png) !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
       .card_title_container{
         position: relative;
-        min-width: 150px;
+        min-width: 180px;
         top:0;
         h2{
           position: absolute;
@@ -1250,7 +1279,6 @@ main{
           left: 35px;
           writing-mode: vertical-rl;
           transform-origin: center;
-
         }
       }
       .card_content_container{
@@ -1258,6 +1286,20 @@ main{
         opacity: 1;
         min-width: 450px;
         padding: 40px 20px;
+      }
+    }
+  }
+
+  .section_cards{
+    .cards_wrapper{
+      .card_content_wrapper{
+        min-height: 360px;
+        .card_title{
+          font-size: 16px;
+        }
+        .card_text{
+          font-size: 14px;
+        }
       }
     }
   }
