@@ -93,12 +93,11 @@ navTabs.forEach((item)=>{
       let currentTab = document.querySelector(`[tab="${tabId}"]`)
       currentTab.classList.add("active")
 
-      gsap.to(window, { duration: 1, scrollTo: {
+      gsap.to(window, { duration: 0.5, scrollTo: {
         y: ".tabs_section",
         offsetY: 100,
-        duration: 0.1
       } });
-      
+
       if(tabId == "careguide"){
         gsap.to(".card_scrollUp", {
           y: "0%",
@@ -154,10 +153,9 @@ let nextBtn = document.querySelectorAll(".next_btn_container");
 
 nextBtn.forEach(function(item) {
   item.addEventListener("click", function() {
-    gsap.to(window, { duration: 1, scrollTo: {
+    gsap.to(window, { duration: 0.5, scrollTo: {
       y: ".tabs_section",
       offsetY: 100,
-      duration: 0.1
     } });
   });
 });
