@@ -92,6 +92,13 @@ navTabs.forEach((item)=>{
       document.getElementById(tabId).style.display = "flex";
       let currentTab = document.querySelector(`[tab="${tabId}"]`)
       currentTab.classList.add("active")
+
+      gsap.to(window, { duration: 1, scrollTo: {
+        y: ".tabs_section",
+        offsetY: 100,
+        duration: 0.1
+      } });
+      
       if(tabId == "careguide"){
         gsap.to(".card_scrollUp", {
           y: "0%",
@@ -154,3 +161,4 @@ nextBtn.forEach(function(item) {
     } });
   });
 });
+
