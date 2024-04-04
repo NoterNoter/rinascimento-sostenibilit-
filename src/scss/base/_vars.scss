@@ -27,7 +27,7 @@ $container_small: 950px;
   margin: 0 auto;
 }
 
-$container_medium: 890px; 
+$container_medium: 900px; 
 @mixin container_medium{
   width: $container_medium;
   max-width: 100%;
