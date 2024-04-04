@@ -6,158 +6,54 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger, SplitText);
 
 
-// // parrallax monete
+let videos = document.querySelectorAll("video");
+videos.forEach((item)=>{
+  item.play();
+})
 
-// const parallax = gsap.utils.toArray(".money");
-
-// gsap.set(parallax, {y: -80})
-
-// parallax.forEach((item)=>{
-//   gsap.to(item, {
-//     yPercent: 100,
-//     ease: "none",
-//     scrollTrigger: {
-//       trigger: item,
-//       scrub: true
-//     }, 
-//   });
-// })
-
-// // parallax illustration
-
-// const parallaxIll = gsap.utils.toArray(".parallax");
-
-// gsap.set(parallaxIll, {y: -100})
-
-// parallaxIll.forEach((item)=>{
-//   gsap.to(item, {
-//     yPercent: 50,
-//     ease: "none",
-//     scrollTrigger: {
-//       trigger: item,
-//       scrub: true
-//     }, 
-//   });
-// })
+ScrollTrigger.batch(".animation_card", {
+  interval: .5,
+  batchMax: 4,
+  trigger: ".animation_cards_wrapper",
+  onEnter: batch => {
+    gsap.to(batch, {
+      y: 0,
+      duration: 1,
+      // ease: "power4.out",
+      stagger: 0.25
+    });
+  },
+  onEnterBack: batch => console.log(batch),
+});
 
 
-
-// const fadeUp = gsap.utils.toArray("[fade]");
-// fadeUp.forEach((el, i) => {
-//   const anim = gsap.fromTo(el, {autoAlpha: 0, y:0}, {duration: 1.5, autoAlpha: 1});
-//   ScrollTrigger.create({
-//     trigger: el,
-//     animation: anim,
-//     toggleActions: 'play none none none',
-//     once: true,
-//   });
-// });
-
-
-// // text anim
-// const textAnim = document.querySelectorAll(".text-anim");
-// textAnim.forEach((quote, i) => {
-    
-//       quote.split = new SplitText(quote, {
-//       type:"words,chars",
-//       wordsClass: "split-line"
-//     });
-//     gsap.set(quote, {perspective: 100});
-//     let tl = gsap.timeline({
-//       scrollTrigger :{
-//         trigger: quote,
-//       }
-//     })
-//     tl.fromTo(quote.split.words,
-//     {autoAlpha: 0},{  duration: 1, autoAlpha: 1,ease: "ease",stagger: 0.03});
-
-//   });
-
-//   // menu
-// let arrow = document.querySelector(".scroll_up_btn");
-// arrow.addEventListener("click", function(){
-//   gsap.to(window, {duration: 1, scrollTo: 0});
-// });
+ScrollTrigger.batch(".animation_card", {
+  interval: .5,
+  batchMax: 4,
+  trigger: ".animation_cards_wrapper",
+  onEnter: batch => {
+    gsap.to(batch, {
+      y: 0,
+      duration: 1,
+      stagger: 0.25
+    });
+  },
+  onEnterBack: batch => console.log(batch),
+});
 
 
-// // navigation 
 
-// // let navlink = document.querySelectorAll(".navigation_section");
-// // let chapter = document.querySelectorAll(".chapter")
-// //   navlink.forEach((item, index )=> {
-// //       item.addEventListener("click", function(){
-// //         gsap.to(window, {duration: 1, scrollTo:
-// //           {
-// //             y: chapter[index],
-// //             offsetY: 100
-// //           }}
-// //          );
-// //       })
-// //   });
+const fadeUp = gsap.utils.toArray("[fade]");
+fadeUp.forEach((el, i) => {
+  const anim = gsap.fromTo(el, {autoAlpha: 0, y:0}, {duration: 1.5, autoAlpha: 1});
+  ScrollTrigger.create({
+    trigger: el,
+    animation: anim,
+    toggleActions: 'play none none none',
+    once: true,
+  });
+});
 
-
-// let navlink = document.querySelectorAll(".navigation_section");
-// let chapter = document.querySelectorAll(".chapter");
-
-// navlink.forEach((item, index) => {
-//   item.addEventListener("click", function () {
-//     // Rimuovi la classe ".underline" da tutti gli elementi di navigazione
-//     navlink.forEach(navItem => {
-//       navItem.classList.remove("underline");
-//       const paragraph = navItem.querySelector("p");
-//       if (paragraph) {
-//         paragraph.classList.remove("underline");
-//       }
-//     });
-
-//     // Aggiungi la classe ".underline" all'elemento di navigazione cliccato
-//     item.classList.add("underline");
-//     const paragraph = item.querySelector("p");
-//     if (paragraph) {
-//       paragraph.classList.add("underline");
-//     }
-
-//     gsap.to(window, {
-//       duration: 1,
-//       scrollTo: {
-//         y: chapter[index],
-//         offsetY: 100
-//       }
-//     });
-//   });
-// });
-
-
-//   // hero animation 
-//   gsap.set(".hero-text h1", {zIndex: -1})
-//   gsap.fromTo(".hero-text h1", {y: 200}, {y: 0, duration: 0.5, stagger: 0.2, ease: "ease"})
-
-
-// // menu scroll 
-// var prevScrollpos = window.pageYOffset;
-// window.onscroll = function() {
-//   var currentScrollPos = window.pageYOffset;
-//   if (prevScrollpos > currentScrollPos) {
-//     document.querySelector(".menu_container").style.top = "40px";
-//   } else {
-//     document.querySelector(".menu_container").style.top = "-90px";
-//   }
-//   prevScrollpos = currentScrollPos;
-// }
-
-
-// const hr = gsap.utils.toArray(".hr");
-// hr.forEach((el, i) => {
-//   gsap.set(el, {transformOrigin:"left"})
-//   const anim = gsap.fromTo(el, {scaleX: 0}, {duration: 1.4, scaleX: 1, delay: 0.3, ease: "circ.out"});
-//   ScrollTrigger.create({
-//     trigger: el,
-//     animation: anim,
-//     ease: "circ.out",
-//     toggleActions: 'play none none none',
-//     once: true,
-//   });
-// });
 
 
 var acc = document.getElementsByClassName("accordion");
@@ -176,25 +72,6 @@ for (i = 0; i < acc.length; i++) {
 }
 
 
-
-// tabs
-
-// function initJs(){
-// let accordions = document.querySelectorAll("tab_accordion");
-// var i;
-
-// for (i = 0; i < acc.length; i++) {
-//   acc[i].addEventListener("click", function() {
-//     this.classList.toggle("active");
-//     var panel = this.nextElementSibling;
-//     if (panel.style.maxHeight) {
-//       panel.style.maxHeight = null;
-//     } else {
-//       panel.style.maxHeight = panel.scrollHeight + "px";
-//     }
-//   });
-// }
-// }
 
 let navTabs = document.querySelectorAll(".tab_link");
 
@@ -215,11 +92,53 @@ navTabs.forEach((item)=>{
       document.getElementById(tabId).style.display = "flex";
       let currentTab = document.querySelector(`[tab="${tabId}"]`)
       currentTab.classList.add("active")
-      
-      // initJs()
 
+      gsap.to(window, { duration: 0.5, scrollTo: {
+        y: ".tabs_section",
+        offsetY: 100,
+      } });
+
+      if(tabId == "careguide"){
+        gsap.to(".card_scrollUp", {
+          y: "0%",
+          stagger: 0.2, 
+          duration: 1
+        })
+      }
   });
 })
+
+
+// card care guide scroll
+let card_care_guide = document.querySelector(".card_careguide");
+
+card_care_guide.addEventListener("click", function(){
+    gsap.to(window, {duration: 1, scrollTo:
+      {
+        y: ".tabs_buttons",
+        offsetY: 100,
+        duration: 0.5,
+        onComplete: () => {
+          const tabId = document.querySelector('[tab="careguide"]');
+          const tabPanel = document.querySelector("#careguide");
+          let panels = document.querySelectorAll(".tab_content")
+
+          navTabs.forEach((item)=>item.classList.remove("active"))
+          panels.forEach((item)=>item.style.display ="none");
+
+          tabId.classList.add("active");
+          tabPanel.style.display = "flex";
+
+          gsap.to(".card_scrollUp", {
+            y: "0%",
+            stagger: 0.25, 
+            duration: 1
+          })
+        }
+      }}
+      );
+  })
+
 
 
 let arrows = document.querySelectorAll(".scroll_up_btn");
@@ -229,3 +148,15 @@ arrows.forEach(function(arrow) {
     gsap.to(window, { duration: 1, scrollTo: 0 });
   });
 });
+
+let nextBtn = document.querySelectorAll(".next_btn_container");
+
+nextBtn.forEach(function(item) {
+  item.addEventListener("click", function() {
+    gsap.to(window, { duration: 0.5, scrollTo: {
+      y: ".tabs_section",
+      offsetY: 100,
+    } });
+  });
+});
+

@@ -31,6 +31,14 @@ main{
   background-color: $white;
 }
 
+*{
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+}
+
 .hero_container{
   position: relative;
   width: 100%;
@@ -417,7 +425,15 @@ main{
   }
 }
 
-
+.animation_card{
+  transform: translateY(100%);
+}
+.card_scrollUp{
+  transform: translateY(100%);
+}
+.animation_cards_wrapper{
+  overflow-y: hidden;
+}
 .section_cards{
   padding: $spacing*20 $spacing*4;
   display: flex;
@@ -455,7 +471,7 @@ main{
       flex: 1 0 auto;
       min-width: 230px;
       border: 1px solid $black;
-      transition: 0.3s ease-in-out;
+      transition: background-color 0.3s ease-in-out;
       &:hover{
         background-color: $green;
         border: 1px solid $green;
@@ -1101,6 +1117,7 @@ main{
       }
       .card_careguide{
         margin-right: 32px !important;
+        cursor: pointer;
       }
     }
   }
