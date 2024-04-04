@@ -20,9 +20,16 @@ $container: 1250px;
   margin: 0 auto;
 }
 
-$container_small: 850px; 
+$container_small: 950px; 
 @mixin container_small{
   width: $container_small;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+$container_medium: 890px; 
+@mixin container_medium{
+  width: $container_medium;
   max-width: 100%;
   margin: 0 auto;
 }
