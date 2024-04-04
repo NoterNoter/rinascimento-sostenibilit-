@@ -850,14 +850,53 @@ main{
   }
 }
 
+// documento scaricabile
+
 .last_section{
   background-color: #F5F5F5;
+  padding-bottom: 68px;
   .last_section_container{
     @include container_small;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 48px;
+  }
+  .doc_box{
+    width: 100%;
+    background-image: url(../images/content/doc-box.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 72px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    border-radius: $radius;
+    gap: 40px;
+    text-align: center;
+    .box_text{
+      h2{
+        font-family: $reckless;
+        font-size: 36px;
+        margin-bottom: 16px;
+      }
+    }
+    .cta{
+      a{
+        display: flex;
+        color: $white;
+        text-decoration: underline;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+      }
+    }
+
   }
 }
 
