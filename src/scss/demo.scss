@@ -498,6 +498,9 @@ main{
         .circle_icon circle{
           fill: white;
         }
+        .card_text{
+          color: white;
+        }
       }
       &:not(:last-child){
         border-right: none;
