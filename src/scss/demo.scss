@@ -68,6 +68,7 @@ main{
     color: $white;
     font-size: $f_20;
     width: $container;
+    max-width: 100%;
     position: absolute;
     z-index: 4;
     top: 50%;
@@ -85,6 +86,7 @@ main{
       margin-top: $spacing*4;
       margin-bottom: $spacing*4;
       font-weight: 300;
+      font-size: 7vw;
     }
     .hero_label{
       font-weight: 600;
@@ -116,7 +118,7 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: top;
-    gap: 43px;
+    gap: 40px;
     video{
       width: 100%;
       height: auto;
@@ -266,11 +268,13 @@ main{
       z-index: 6;
       top: 72px;
       background-image: none !important;
+      transition: opacity 0.6s ease-in-out;
       .h2{
         color: $white;
         font-style: italic;
         text-align: center;
         font-size: 36px;
+        transition: opacity 0.6s ease-in-out;
       }
     }
   }
@@ -926,50 +930,60 @@ main{
 
 .hero_container{
   @include aspect(9, 16);
-  padding: 0px 14px;
+  width: 100%;
   .hero_title_container{
+    padding: 0px 14px;
+    .hero_label{
+      margin-bottom: 56px;
+    }
     h1{
-      font-size: $f_56;
-      width: 30%;
+      font-size: 48px !important;
+      width: 90%;
+      margin-top: 0px !important;
     }
     p{
-      width: 30%;
+      width: 90%;
       text-align: center;
     }
   }
 }
 
 .sectione_one{
-  padding: $spacing*8 $spacing*4 $spacing*4 $spacing*4;
+  padding: $spacing*8 $spacing*4;
+  .tilte_manifesto{
+    h2{
+      margin-bottom: 24px;
+    }
+  }
   .sectione_one_wrapper{
     flex-direction: column;
+    gap: 40px;
     .sectione_one_text_container{
       width: 100%;
-      padding-top: 0px;
-      padding-bottom: 40px;
+      padding-bottom: 0px;
       .section_one_text_box{
-        width: 100%;
         .section_one_body{
-          margin: $spacing*3 0px;
-          gap: $spacing*3;
-          .h2{
-            font-size: 32px;
-          }
+          gap: 16px;
         }
-        .section_one_link{
-          font-size: $f_16;
-        }
+
       }
     }
-    .section_one_img_container{
+    .section_one_video_container{
       width: 100%;
     }
   }
 }
 
+
+
 .section_principi{
-  padding-top: 52px;
-  gap: 52px;
+  padding: 64px 0px 45px 32px;
+  gap: 32px;
+  .section_principi_cards_container{
+    .principi_cards_wrapper{
+      gap: 16px;
+    }
+  }
   .section_principi_headline_container{
     .section_principi_headline_wrapper{
       gap: 16px;
@@ -1359,13 +1373,42 @@ main{
 
 
 @media only screen and (max-width: 1200px) {
+
+  .sectione_one{
+    padding: $spacing*8 $spacing*4;
+    .tilte_manifesto{
+      h2{
+        margin-bottom: 24px;
+      }
+    }
+    .sectione_one_wrapper{
+      flex-direction: column;
+      gap: 40px;
+      .sectione_one_text_container{
+        width: 100%;
+        padding-bottom: 0px;
+        .section_one_text_box{
+          .section_one_body{
+            gap: 16px;
+          }
+  
+        }
+      }
+      .section_one_video_container{
+        width: 100%;
+      }
+    }
+  }
+
+
+
   .section_principi_cards_container{
     .principi_cards_wrapper{
       flex-wrap: nowrap;
       overflow-x: scroll;
     }
     .principi_card{
-      min-width: 600px;
+      min-width: 500px;
       background-image: none !important;
       width: auto;
       display: flex;
@@ -1373,32 +1416,27 @@ main{
         content: none;
         padding-top: unset;
       }
-      .principi_title_slow{
-        background-image: url(../images/content/slow_img_mobile.png) !important;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
       .principi_title_circular{
-        background-image: url(../images/content/circular_img_mobile.png) !important;
+        background-image: url(../images/content/stile-italiano.jpeg) !important;
         background-repeat: no-repeat;
         background-size: cover;
       }
       .principi_title_fair{
-        background-image: url(../images/content/fair_img_mobile.png) !important;
+        background-image: url(../images/content/circular-img.jpeg) !important;
         background-repeat: no-repeat;
         background-size: cover;
       }
       .card_title_container{
         position: relative;
-        min-width: 180px;
+        min-width: 150px;
         top:0;
         h2{
           position: absolute;
-          bottom: 30px;
+          bottom: 48px;
           display: flex;
           align-items: center;
           transform: rotate(180DEG);
-          left: 35px;
+          left: 55px;
           writing-mode: vertical-rl;
           transform-origin: center;
         }
@@ -1406,10 +1444,17 @@ main{
       .card_content_container{
         position: unset;
         opacity: 1;
-        min-width: 450px;
-        padding: 40px 20px;
+        min-width: 350px;
+        padding: 60px 32px;
+        .content_card{
+          width: 100%;
+        }
       }
     }
+  }
+
+  .principi_card_fair{
+    margin-right: 32px;
   }
 
   .section_cards{
