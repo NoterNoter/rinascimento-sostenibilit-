@@ -359,7 +359,7 @@ main{
     }
   }
   .accordion_border{
-    border-top: $border;
+    border-top: $border;  
   }
   .accordion_text{
     font-family: $poppins;
@@ -520,6 +520,9 @@ main{
       justify-content: flex-start;
       height: 60%;
       min-height: 350px;
+      .card_text{
+        color: #808080;
+      }
     }
   }
 }
@@ -627,6 +630,8 @@ main{
     }
     .tab_text{
       text-align: center;
+      width: 85%;
+      max-width: 100%;
     }
     .tab_inner_content{
       display: flex;
@@ -641,8 +646,8 @@ main{
 }
 .tab_text_img_component{
   padding: $spacing*7 0px;
-  border-top: 1px solid $black;
-  border-bottom: 1px solid $black;
+  border-top: 1px solid #CECECE;
+  border-bottom: 1px solid #CECECE;
   &:last-child{
     border-top: none;
   }
@@ -744,14 +749,6 @@ main{
   }
   .section_accordion{
     padding: 0px;
-    .accordion_wrapper{
-      .accordion_border{
-        border-top: 1px solid $black;
-      }
-      &:last-child{
-        border-bottom: 1px solid $black;
-      }
-    }
   }
   .accordion_tab{
     padding: 24px 0px;
@@ -873,6 +870,8 @@ main{
 .last_section{
   background-color: #F5F5F5;
   padding-bottom: 68px;
+  padding-left: 32px;
+  padding-right: 32px;
   .last_section_container{
     @include container_small;
     display: flex;
@@ -1072,11 +1071,12 @@ main{
 
 .video_full_screen{
   .hero_container{
-    @include aspect(16, 9);
+    @include aspect(16, 12);
     padding: 0px 14px;
     .hero_title_container{
       .h1{
-        font-size: 32px;
+        font-size: 32px !important;
+        margin-bottom: 0px;
       }
     }
   }
@@ -1084,6 +1084,7 @@ main{
 
 .section_cards{
   padding: 64px 32px;
+  gap: 40px;
   .section_cards_container_top{
     .section_cards_headline{
       padding: 0px 32px;
@@ -1112,10 +1113,19 @@ main{
       }
       .protagonista_card{
         width: 80vw !important;
-        @include aspect(3, 4);
+        @include aspect(37, 43);
+        .circle_icon{
+          top: 48px;
+          right: 32px;
+        }
         .card_content_wrapper{
+          padding-left: 32px;
+          padding-right: 32px;
+          padding-bottom: 32px;
+          display: flex;
+          justify-content: flex-end;
           .card_title{
-            font-size: 16px;
+            font-size: 18px;
           }
         }
       }
@@ -1125,34 +1135,27 @@ main{
 
 .last_section_cards{
   gap: 40px;
-  padding: 64px 0px;
+  padding: 64px 32px;
   .section_cards_container_bottom{
     overflow-x: scroll;
-    .cards_photo_container{
-      gap: 24px;
-      &:first-child{
-        margin-left: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    .card_photo_container{
+      width: 100%;
+    }
+    .text_everyone{
+      width: 100%;
+      gap: 16px;
+      h2{
+        font-size: 24px;
       }
-      .single_card{
-        width: 280px;
-        gap: 16px;
-        .single_card_content{
-          .single_card_text{
-            gap: 16px;
-            .title{
-              font-size: 24px;
-            }
-          }
-          .single_card_link{
-            p{
-              font-size: 12px;
-            }
+      .p_everyone{
+        p{
+          &:not(:last-child){
+            margin-bottom: 16px;
           }
         }
-      }
-      .card_careguide{
-        margin-right: 32px !important;
-        cursor: pointer;
       }
     }
   }
@@ -1164,7 +1167,7 @@ main{
 
 .tabs_section{
   gap: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 90px;
   padding-left: 0px;
   padding-right: 0px;
   .tabs_container{
@@ -1292,63 +1295,7 @@ main{
   }
 }
 
-.careguide_tab{
-  gap: 64px !important;
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-  .tab_headline{
-    padding: 0px 32px;
-  }
-  .tab_inner_content{
-    .section_cards{
-      padding-top: 0px;
-      gap: 16px;
-      padding-bottom: 64px;
-      .section_cards_container_top{
-        .section_cards_headline{
-          .subtitle{
-            font-size: 14px;
-          }
-        }
-      }
-      .section_cards_container_bottom{
-        overflow-x: unset;
-        .cards_wrapper{
-          flex-wrap: nowrap !important;
-          .protagonista_card{
-            width: 80vw !important;
-            @include aspect(3, 4);
-            .card_content_wrapper{
-              .card_title{
-                font-size: 16px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  .tab_accordion_component{
-    padding: 0px 32px;
-    .accordion_careguide{
-      .accordion_wrapper{
-        .accordion_inner{
-          .accordion_inner_container{
-            flex-direction: column !important;
-            .accordion_inner_img{
-              img{
-                display: none;
-              }
-            }
-            .accordion_inner_img::before{
-              display: none;
-            }
-          }
-        }
-      }
-    }
-  }
-}
+
 
 .accordion_materiali_new{
   .accordion_wrapper{
@@ -1367,6 +1314,35 @@ main{
     }
   }
   
+}
+
+.last_section{
+  .last_section_container{
+    gap: 64px;
+    .doc_box{
+      gap: 24px;
+      align-items: center;
+      padding: 50px 48px;
+      .box_text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2{
+          font-size: 24px;
+        }
+      }
+    }
+    .cta{
+      p{
+        font-size: 16px;
+      }
+    }
+    .start_btn{
+      p{
+        font-size: 16px;
+      }
+    }
+  }
 }
    
 }
