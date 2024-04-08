@@ -257,6 +257,9 @@ main{
       .card_title_container{
         .h2{
           color: $black;
+          @media screen and (max-width: 768px) {
+            color: $white;
+          }
         }
       }
       .card_content_container{
@@ -426,13 +429,16 @@ main{
     display: block;
   }
   .accordion_title{
-    color: $green;
+    color: $green !important;
   }
 }
 
 .accordion:hover {
   .accordion_title{
     color: $green;
+    @media screen and (max-width: 768px) {
+      color: $black;
+    } 
   }
   .accordion_img_container{
     opacity: 1;
@@ -441,6 +447,7 @@ main{
     stroke: $green;
   }
 }
+
 
 .active.accordion{
   .accordion_img_container{
