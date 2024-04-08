@@ -382,6 +382,7 @@ main{
     .accordion_inner_row{
       display: flex;
       gap: $spacing*4;
+      margin-bottom: 16px;
       .row_text{
         width: 70%;
         color: #808080;
@@ -454,7 +455,7 @@ main{
   overflow-y: hidden;
 }
 .section_cards{
-  padding: $spacing*20 $spacing*4;
+  padding: 140px $spacing*4;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -525,7 +526,7 @@ main{
       height: 60%;
       min-height: 350px;
       .card_text{
-        color: #808080;
+        color: #666666;
       }
     }
   }
