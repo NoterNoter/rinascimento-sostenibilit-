@@ -786,6 +786,12 @@ main{
   .accordion_tab{
     padding: 24px 0px;
     background-color: #F5F5F5;
+    .accordion_icon_open{
+      height: 24px;
+    }
+    .accordion_icon_close{
+      height: 24px;
+    }
     .accordion_title_container{
       font-weight: 600;
       font-size: $f_20;
@@ -1304,6 +1310,12 @@ main{
     .accordion_wrapper{
       .accordion_tab{
         padding: 16px 0px;
+        .accordion_icon_open{
+          height: 24px;
+        }
+        .accordion_icon_close{
+          height: 24px;
+        }
         .accordion_button_container{
           .accordion_title_container{
             p{
