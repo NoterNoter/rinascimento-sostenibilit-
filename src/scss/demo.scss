@@ -1199,13 +1199,19 @@ main{
   }
 }
 
+#iniziative, #materiali {
+  .tab_text{
+    width: 100%;
+  }
+}
+
 .tab_text_img_component{
   padding: 32px 0px;
   flex-direction: column;
   gap: 24px;
   .img_container{
     width: 100%;
-    padding-bottom: 80%;
+    padding-bottom: 92%;
     position: relative;
     overflow: hidden;
     border-radius: $radius;
