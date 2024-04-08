@@ -228,6 +228,7 @@ main{
     position: relative;
     overflow: hidden;
     border-radius: $radius;
+    background-color: #bab7b0;
     .card_content_container {
       opacity: 0;
       padding: $spacing*2;
@@ -1030,6 +1031,10 @@ main{
       }
     }
   }
+}
+
+.principi_card_fair{
+  margin-right: 32px !important;
 }
 
 .section_scelta{
