@@ -109,36 +109,6 @@ navTabs.forEach((item)=>{
 })
 
 
-// card care guide scroll
-let card_care_guide = document.querySelector(".card_careguide");
-
-card_care_guide.addEventListener("click", function(){
-    gsap.to(window, {duration: 1, scrollTo:
-      {
-        y: ".tabs_buttons",
-        offsetY: 100,
-        duration: 0.5,
-        onComplete: () => {
-          const tabId = document.querySelector('[tab="careguide"]');
-          const tabPanel = document.querySelector("#careguide");
-          let panels = document.querySelectorAll(".tab_content")
-
-          navTabs.forEach((item)=>item.classList.remove("active"))
-          panels.forEach((item)=>item.style.display ="none");
-
-          tabId.classList.add("active");
-          tabPanel.style.display = "flex";
-
-          gsap.to(".card_scrollUp", {
-            y: "0%",
-            stagger: 0.25, 
-            duration: 1
-          })
-        }
-      }}
-      );
-  })
-
 
 
 let arrows = document.querySelectorAll(".scroll_up_btn");
@@ -160,3 +130,10 @@ nextBtn.forEach(function(item) {
   });
 });
 
+
+// video mobile
+
+let video = document.querySelectorAll("video");
+video.forEach((item)=>{
+  item.play()
+})

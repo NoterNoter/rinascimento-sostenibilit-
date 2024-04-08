@@ -208,7 +208,7 @@ main{
 
 .section_principi_cards_container{
   width: 100%;
-  @include container_big;
+  @include container;
   .principi_cards_wrapper{
     display: flex;
     justify-content: space-between;
@@ -425,6 +425,9 @@ main{
   .accordion_icon_close{
     display: block;
   }
+  .accordion_title{
+    color: $green;
+  }
 }
 
 .accordion:hover {
@@ -529,6 +532,19 @@ main{
         color: #666666;
       }
     }
+  }
+}
+
+// video full screen desktop
+.video_full_screen{
+  position: relative;
+  &::after{
+    content: "";
+    background-color: rgba($color: #13121880, $alpha: 0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
   }
 }
 
