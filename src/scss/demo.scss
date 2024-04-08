@@ -3,6 +3,10 @@ em{
   font-style: italic;
 }
 
+video{
+  pointer-events: none;
+}
+
 .h1{
   font-family: $reckless;
   font-size: $f_88;
