@@ -11,34 +11,17 @@ videos.forEach((item)=>{
   item.play();
 })
 
-ScrollTrigger.batch(".animation_card", {
-  interval: .5,
-  batchMax: 4,
-  trigger: ".animation_cards_wrapper",
-  onEnter: batch => {
-    gsap.to(batch, {
-      y: 0,
-      duration: 1,
-      // ease: "power4.out",
-      stagger: 0.25
-    });
-  },
-  onEnterBack: batch => console.log(batch),
-});
 
+const cards = document.querySelectorAll('.animation_card');
 
-ScrollTrigger.batch(".animation_card", {
-  interval: .5,
-  batchMax: 4,
-  trigger: ".animation_cards_wrapper",
-  onEnter: batch => {
-    gsap.to(batch, {
-      y: 0,
-      duration: 1,
-      stagger: 0.25
-    });
-  },
-  onEnterBack: batch => console.log(batch),
+gsap.to(cards, {
+  y: 0,
+  stagger: 0.25,
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".section_cards_headline",
+    start: 'top 80%',
+  }
 });
 
 
@@ -93,7 +76,7 @@ navTabs.forEach((item)=>{
       let currentTab = document.querySelector(`[tab="${tabId}"]`)
       currentTab.classList.add("active")
 
-      gsap.to(window, { duration: 0.5, scrollTo: {
+      gsap.to(window, { duration: 0, scrollTo: {
         y: ".tabs_section",
         offsetY: 100,
       } });
@@ -123,7 +106,7 @@ let nextBtn = document.querySelectorAll(".next_btn_container");
 
 nextBtn.forEach(function(item) {
   item.addEventListener("click", function() {
-    gsap.to(window, { duration: 0.5, scrollTo: {
+    gsap.to(window, { duration: 0, scrollTo: {
       y: ".tabs_section",
       offsetY: 100,
     } });

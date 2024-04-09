@@ -299,6 +299,13 @@ main{
   background-image: url(../images/content/circular-img.jpeg);
 }
 
+.mobile_br{
+  display: none;
+  @media screen and (max-width: 768px){
+    display: block;
+  }
+}
+
 
 .section_scelta{
   padding: $spacing*20 $spacing*3;
@@ -506,7 +513,7 @@ main{
       // width: 25%;
       flex: 1 0 auto;
       min-width: 230px;
-      border: 1px solid $black;
+      border: 1px solid #CECECE;
       transition: background-color 0.3s ease-in-out;
       &:hover{
         background-color: $green;
@@ -1041,6 +1048,7 @@ main{
   }
 }
 
+
 .principi_card_fair{
   margin-right: 32px !important;
 }
@@ -1480,6 +1488,7 @@ main{
         min-width: 350px;
         padding: 60px 32px;
         .content_card{
+          padding-top: 0;
           width: 100%;
         }
       }
