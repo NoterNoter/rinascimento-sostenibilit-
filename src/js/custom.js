@@ -140,17 +140,44 @@ function handleIntersection(entries, observer) {
   });
 }
 
+function handleIntersection2(entries, observer) {
+  entries.forEach(entry => {
+    const index = entry.target.dataset.index;
+    let cont = document.querySelector(`.bullet_bottom`);
+    const bullet = cont.querySelector(` .bullet_${index}`);
+    const bullets = cont.querySelectorAll('.bullet');
+    if (entry.isIntersecting) {
+      bullet.classList.add('active');
+      bullets.forEach((item) => {
+        if(item != bullet){
+          item.classList.remove('active');
+        }
+      });
+    } else {
+      bullet.classList.remove('active');
+    }
+  });
+}
+
 // Seleziona il container delle card
 const cardContainer = document.querySelector('card_content_container');
 
 // Seleziona tutte le card all'interno del container
 const content_card = document.querySelectorAll('.content_card');
 
-// Crea un observer per controllare l'intersezione delle card
 const observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
 
-// Osserva ogni card
 content_card.forEach((card, index) => {
-  card.dataset.index = index + 1; // Assegna un indice alla card
+  card.dataset.index = index + 1; 
   observer.observe(card);
+});
+
+let animation_card_container = document.querySelector(".animation_cards_wrapper");
+let animation_cards = document.querySelectorAll(".animation_card");
+
+const observer2 = new IntersectionObserver(handleIntersection2, { threshold: 0.5 });
+
+animation_cards.forEach((card, index) => {
+  card.dataset.index = index + 1; 
+  observer2.observe(card);
 });

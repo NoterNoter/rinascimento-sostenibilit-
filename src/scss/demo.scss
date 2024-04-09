@@ -344,39 +344,48 @@ main{
   }
 }
 
-.section_scelta{
+.section_scelta, .section_cards{
   position: relative;
+}
   .bullet_mobile{
     display: none;
-  }
-  @media screen and (max-width: 768px){
-    .bullet_mobile{
-      display: flex;
-      justify-content: center;
-      position: absolute;
-      top: 20px;
-      left: 0;
-      width: 100%;
-      .bullet_container{
-        width: 60%;
+    @media screen and (max-width: 768px){
         display: flex;
         justify-content: center;
-        gap: 10px;
-      }
-      .bullet{
-        height: 3px;
-        flex:1;
-        border-radius: 10px;
-        background-color: #E5E5E5;
-        transition: .4s ease;
-        &.active{
-          min-width: 70%;
-          background-color: black;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        width: 100%;
+        &.bullet_bottom{
+          top: unset;
+          bottom: 50px;
+          .bullet{
+            &.active{
+              min-width: 50%;
+              background-color: #131218;
+            }
+          }
         }
-      }
+        .bullet_container{
+          width: 60%;
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+        }
+        .bullet{
+          height: 3px;
+          flex:1;
+          border-radius: 10px;
+          background-color: #E5E5E5;
+          transition: .4s ease;
+          &.active{
+            min-width: 70%;
+            background-color: #131218;
+          }
+        }
     }
   }
-}
+
 
 
 // accordion
@@ -1088,6 +1097,7 @@ main{
 
 .section_scelta{
   padding: 64px 24px;
+  padding-top: 80px;
   .section_scelta_container{
     gap: 16px;
     .section_scelta_headline{
@@ -1187,6 +1197,7 @@ main{
 .section_cards{
   padding-left: 0px;
   padding-right: 0px;
+  padding-bottom: 80px;
   .section_cards_container_bottom{
     overflow-x: unset;
     .cards_wrapper{
