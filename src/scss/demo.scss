@@ -526,6 +526,18 @@ main{
   justify-content: center;
   align-items: center;
   gap: $spacing*8;
+  &.section_card_animated{
+    padding-left: 0px;
+    padding-right: 0px;
+    .section_cards_container_bottom{
+      .animation_card:first-child{
+       margin-left: 32px;
+      }
+      .animation_card:last-child{
+        margin-right: 32px;
+       }
+    }
+  }
   .section_cards_container_top{
     @include container_small;
     .section_cards_headline{
@@ -554,7 +566,7 @@ main{
       justify-content: flex-end;
       // width: 25%;
       flex: 1 0 auto;
-      min-width: 230px;
+      min-width: 320px;
       border: 1px solid #CECECE;
       transition: background-color 0.3s ease-in-out;
       &:hover{
@@ -1008,12 +1020,126 @@ main{
 
 
 
-// mobile
+// tablet
+@media only screen and (max-width: 1080px) {
 
+
+  .sectione_one{
+    padding: $spacing*8 $spacing*4;
+    .tilte_manifesto{
+      h2{
+        margin-bottom: 24px;
+      }
+    }
+    .sectione_one_wrapper{
+      flex-direction: column;
+      gap: 40px;
+      .sectione_one_text_container{
+        width: 100%;
+        padding-bottom: 0px;
+        .section_one_text_box{
+          .section_one_body{
+            gap: 16px;
+          }
+  
+        }
+      }
+      .section_one_video_container{
+        width: 100%;
+      }
+    }
+  }
+
+
+
+  .section_principi_cards_container{
+    .principi_cards_wrapper{
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+    }
+    .principi_card{
+      min-width: 500px;
+      background-image: none !important;
+      width: auto;
+      display: flex;
+      &:before{
+        content: none;
+        padding-top: unset;
+      }
+      .principi_title_circular{
+        background-image: url(../images/content/stile-italiano.jpeg) !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .principi_title_fair{
+        background-image: url(../images/content/circular-img.jpeg) !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .card_title_container{
+        position: relative;
+        min-width: 150px;
+        top:0;
+        h2{
+          position: absolute;
+          bottom: 48px;
+          display: flex;
+          align-items: center;
+          transform: rotate(180DEG);
+          left: 55px;
+          writing-mode: vertical-rl;
+          transform-origin: center;
+        }
+      }
+      .card_content_container{
+        position: unset;
+        opacity: 1;
+        min-width: 350px;
+        padding: 60px 32px;
+        .content_card{
+          padding-top: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .principi_card_fair{
+    margin-right: 32px;
+  }
+
+  .section_cards{
+    .cards_wrapper{
+      .card_content_wrapper{
+        min-height: 315px;
+        .card_title{
+          font-size: 16px;
+        }
+        .card_text{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .section_cards .cards_wrapper .protagonista_card{
+    min-width: 300px;
+  }
+
+  .last_section_cards .section_cards_container_bottom{
+    padding: 0 20px;
+  }
+}
+
+// mobile
 @media only screen and (max-width: 768px) {
 
   main{
     font-size: $f_14;
+  }
+
+  .section_cards_container_bottom{
+    padding: 0px !important;
   }
 
 .hero_container{
@@ -1166,6 +1292,9 @@ main{
 }
 
 .video_full_screen{
+  .video_fullscreen_container{
+    height: auto
+  }
   .hero_container{
     @include aspect(16, 12);
     padding: 0px 14px;
@@ -1452,108 +1581,5 @@ main{
       }
     }
   }
-}
-   
-}
-
-
-@media only screen and (max-width: 1200px) {
-
-  .sectione_one{
-    padding: $spacing*8 $spacing*4;
-    .tilte_manifesto{
-      h2{
-        margin-bottom: 24px;
-      }
-    }
-    .sectione_one_wrapper{
-      flex-direction: column;
-      gap: 40px;
-      .sectione_one_text_container{
-        width: 100%;
-        padding-bottom: 0px;
-        .section_one_text_box{
-          .section_one_body{
-            gap: 16px;
-          }
-  
-        }
-      }
-      .section_one_video_container{
-        width: 100%;
-      }
-    }
-  }
-
-
-
-  .section_principi_cards_container{
-    .principi_cards_wrapper{
-      flex-wrap: nowrap;
-      overflow-x: scroll;
-    }
-    .principi_card{
-      min-width: 500px;
-      background-image: none !important;
-      width: auto;
-      display: flex;
-      &:before{
-        content: none;
-        padding-top: unset;
-      }
-      .principi_title_circular{
-        background-image: url(../images/content/stile-italiano.jpeg) !important;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-      .principi_title_fair{
-        background-image: url(../images/content/circular-img.jpeg) !important;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-      .card_title_container{
-        position: relative;
-        min-width: 150px;
-        top:0;
-        h2{
-          position: absolute;
-          bottom: 48px;
-          display: flex;
-          align-items: center;
-          transform: rotate(180DEG);
-          left: 55px;
-          writing-mode: vertical-rl;
-          transform-origin: center;
-        }
-      }
-      .card_content_container{
-        position: unset;
-        opacity: 1;
-        min-width: 350px;
-        padding: 60px 32px;
-        .content_card{
-          padding-top: 0;
-          width: 100%;
-        }
-      }
-    }
-  }
-
-  .principi_card_fair{
-    margin-right: 32px;
-  }
-
-  .section_cards{
-    .cards_wrapper{
-      .card_content_wrapper{
-        min-height: 360px;
-        .card_title{
-          font-size: 16px;
-        }
-        .card_text{
-          font-size: 14px;
-        }
-      }
-    }
-  }
+} 
 }
