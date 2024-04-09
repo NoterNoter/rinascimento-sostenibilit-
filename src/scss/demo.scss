@@ -344,6 +344,39 @@ main{
   }
 }
 
+.section_scelta{
+  position: relative;
+  .bullet_mobile{
+    display: none;
+  }
+  @media screen and (max-width: 768px){
+    .bullet_mobile{
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      width: 100%;
+      .bullet_container{
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+      .bullet{
+        height: 3px;
+        flex:1;
+        border-radius: 10px;
+        background-color: #E5E5E5;
+        transition: .4s ease;
+        &.active{
+          min-width: 70%;
+          background-color: black;
+        }
+      }
+    }
+  }
+}
 
 
 // accordion

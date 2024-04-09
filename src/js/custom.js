@@ -115,8 +115,42 @@ nextBtn.forEach(function(item) {
 
 
 // video mobile
-
 let video = document.querySelectorAll("video");
 video.forEach((item)=>{
   item.play()
 })
+
+
+
+function handleIntersection(entries, observer) {
+  entries.forEach(entry => {
+    const index = entry.target.dataset.index;
+    const bullet = document.querySelector(`.bullet_${index}`);
+    const bullets = document.querySelectorAll('.bullet');
+    if (entry.isIntersecting) {
+      bullet.classList.add('active');
+      bullets.forEach((item) => {
+        if(item != bullet){
+          item.classList.remove('active');
+        }
+      });
+    } else {
+      bullet.classList.remove('active');
+    }
+  });
+}
+
+// Seleziona il container delle card
+const cardContainer = document.querySelector('card_content_container');
+
+// Seleziona tutte le card all'interno del container
+const content_card = document.querySelectorAll('.content_card');
+
+// Crea un observer per controllare l'intersezione delle card
+const observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
+
+// Osserva ogni card
+content_card.forEach((card, index) => {
+  card.dataset.index = index + 1; // Assegna un indice alla card
+  observer.observe(card);
+});
