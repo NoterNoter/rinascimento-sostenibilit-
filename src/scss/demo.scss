@@ -1,3 +1,10 @@
+.desktop{
+  display: block;
+}
+
+.mobile{
+  display: none;
+}
 
 em{
   font-style: italic;
@@ -72,7 +79,7 @@ main{
   .hero_title_container{
     color: $white;
     font-size: $f_20;
-    width: $container_big;
+    width: $container_hero;
     max-width: 100%;
     position: absolute;
     z-index: 4;
@@ -1142,6 +1149,14 @@ main{
 
 // mobile
 @media only screen and (max-width: 768px) {
+
+  .desktop{
+    display: none;
+  }
+  
+  .mobile{
+    display: block;
+  }
 
   main{
     font-size: $f_14;

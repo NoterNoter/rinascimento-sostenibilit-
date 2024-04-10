@@ -41,6 +41,14 @@ $container_big: 1400px;
   margin: 0 auto;
 }
 
+$container_hero: 1500px;
+@mixin container_big{
+  width: $container_hero;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+
 $spacing: 8px;
 
 $radius: 10px;
