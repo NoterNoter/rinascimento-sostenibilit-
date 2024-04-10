@@ -1,10 +1,3 @@
-.desktop{
-  display: block;
-}
-
-.mobile{
-  display: none;
-}
 
 em{
   font-style: italic;
@@ -1150,13 +1143,10 @@ main{
 // mobile
 @media only screen and (max-width: 768px) {
 
-  .desktop{
+  .hero_title_br{
     display: none;
   }
-  
-  .mobile{
-    display: block;
-  }
+
 
   main{
     font-size: $f_14;
@@ -1607,4 +1597,12 @@ main{
     }
   }
 } 
+}
+
+// monitor
+
+@media only screen and (min-width: 1700px) {
+  .hero_title_br{
+    display: none;
+  }
 }
