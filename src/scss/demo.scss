@@ -883,7 +883,7 @@ main{
             font-size: $f_14;
             color: #666666;
             &:not(:last-child){
-              margin-bottom: $spacing*2;
+              margin-bottom: $spacing;
             }
           }
         }
