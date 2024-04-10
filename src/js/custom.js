@@ -127,6 +127,7 @@ function handleIntersection(entries, observer) {
     const index = entry.target.dataset.index;
     const bullet = document.querySelector(`.bullet_${index}`);
     const bullets = document.querySelectorAll('.bullet');
+
     if (entry.isIntersecting) {
       bullet.classList.add('active');
       bullets.forEach((item) => {
@@ -136,9 +137,15 @@ function handleIntersection(entries, observer) {
       });
     } else {
       bullet.classList.remove('active');
+      // aggiungi funzione per fare in modo che se nessuno dei due bullet ha classe active di default viene insierita al primo bullet
+      if(!bullets[0].classList.contains('active') && !bullets[1].classList.contains('active')){
+        bullets[0].classList.add('active');
+      }
     }
   });
 }
+
+
 
 function handleIntersection2(entries, observer) {
   entries.forEach(entry => {
@@ -161,23 +168,38 @@ function handleIntersection2(entries, observer) {
 
 // Seleziona il container delle card
 const cardContainer = document.querySelector('card_content_container');
-
 // Seleziona tutte le card all'interno del container
-const content_card = document.querySelectorAll('.content_card');
-
+const content_card = document.querySelectorAll('.principi_card');
 const observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
-
+let bullets1 = document.querySelectorAll('.section_scelta .bullet');
 content_card.forEach((card, index) => {
   card.dataset.index = index + 1; 
   observer.observe(card);
+
+  bullets1[index].addEventListener('click', function(){
+    gsap.to(".principi_cards_wrapper", { duration: 0.5, scrollTo: {
+      x:  content_card[index],
+      offsetX: 24,
+    } });
+  })
+
 });
+
 
 let animation_card_container = document.querySelector(".animation_cards_wrapper");
 let animation_cards = document.querySelectorAll(".animation_card");
-
 const observer2 = new IntersectionObserver(handleIntersection2, { threshold: 0.5 });
+let bullets2 = document.querySelectorAll('.section_card_animated .bullet');
 
 animation_cards.forEach((card, index) => {
   card.dataset.index = index + 1; 
   observer2.observe(card);
+
+  bullets2[index].addEventListener('click', function(){
+    gsap.to(".animation_cards_wrapper", { duration: 0.5, scrollTo: {
+      x:  animation_cards[index],
+      offsetX: 24,
+    } });
+  })
+
 });

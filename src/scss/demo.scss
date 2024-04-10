@@ -208,6 +208,15 @@ main{
       }
     }
   }
+  @media screen and (max-width: 768px){
+    padding-left: 0px !important;
+    .principi_card:first-child{
+      margin-left: 24px;
+    }
+    .principi_card:last-child{
+      margin-right: 24px; 
+    }
+}
 }
 
 .section_principi_cards_container{
