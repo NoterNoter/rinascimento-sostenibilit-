@@ -3,6 +3,14 @@ em{
   font-style: italic;
 }
 
+.pt-32{
+  padding-top: 32px;
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
+
 video{
   pointer-events: none;
 }
@@ -752,9 +760,6 @@ main{
   padding: $spacing*7 0px;
   border-top: 1px solid #CECECE;
   border-bottom: 1px solid #CECECE;
-  &:last-child{
-    border-top: none;
-  }
   display: flex;
   gap: $spacing*6;
   .img_container{
