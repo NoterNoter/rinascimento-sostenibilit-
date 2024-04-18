@@ -102,17 +102,6 @@ arrows.forEach(function(arrow) {
 });
 
 
-// let nextBtn = document.querySelectorAll(".next_btn_container");
-// nextBtn.forEach(function(item) {
-//   item.addEventListener("click", function() {
-//     gsap.to(window, { duration: 0, scrollTo: {
-//       y: ".tabs_section",
-//       offsetY: 100,
-//     } });
-//   });
-// });
-
-
 // video mobile
 let video = document.querySelectorAll("video");
 video.forEach((item)=>{
