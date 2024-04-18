@@ -688,7 +688,7 @@ main{
   gap: $spacing*7;
   .tabs_container{
     @include container_big;
-    top: 0px;
+    top: 86px;
     position: sticky;
     z-index: 2;
     background-color: #F5F5F5;
@@ -1418,7 +1418,7 @@ main{
   padding-right: 0px;
   .tabs_container{
     padding: 0px 32px;
-    top: 0px;
+    top: 104px;
     .tabs_buttons{
       height: 50px;
       .tab_link_wrapper{
