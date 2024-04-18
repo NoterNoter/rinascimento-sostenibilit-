@@ -677,6 +677,7 @@ main{
 
 // tabs
 
+
 .tabs_section{
   padding: 0px $spacing*4;
   background-color: #F5F5F5;
@@ -689,6 +690,9 @@ main{
   .tabs_container{
     @include container_big;
     top: 86px;
+    &.no_header{
+      top: 0px;
+    }
     position: sticky;
     z-index: 2;
     background-color: #F5F5F5;
