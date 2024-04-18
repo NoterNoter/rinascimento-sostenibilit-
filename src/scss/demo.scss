@@ -649,7 +649,7 @@ main{
   .section_cards_container_bottom{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     gap: 72px;
     .card_photo_container{
         width: 50%;
@@ -662,6 +662,7 @@ main{
       h2{
         font-family: $reckless;
         font-size: 36px;
+        margin-top: -6px;
       }
       p{
         color: #666666;
@@ -687,7 +688,7 @@ main{
   gap: $spacing*7;
   .tabs_container{
     @include container_big;
-    top: 86px;
+    top: 0px;
     position: sticky;
     z-index: 2;
     background-color: #F5F5F5;
