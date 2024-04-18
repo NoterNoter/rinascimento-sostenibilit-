@@ -66,7 +66,6 @@ navTabs.forEach((item)=>{
       let tabContent = document.getElementsByClassName("tab_content");
       for (i = 0; i < tabContent.length; i++) {
         tabContent[i].style.display = "none";
-        // navTabs[i].classList.remove("nav-active");
       }
       for (i = 0; i < navTabs.length; i++) {
         navTabs[i].className = navTabs[i].className.replace(" active", "");
@@ -102,16 +101,16 @@ arrows.forEach(function(arrow) {
   });
 });
 
-let nextBtn = document.querySelectorAll(".next_btn_container");
 
-nextBtn.forEach(function(item) {
-  item.addEventListener("click", function() {
-    gsap.to(window, { duration: 0, scrollTo: {
-      y: ".tabs_section",
-      offsetY: 100,
-    } });
-  });
-});
+// let nextBtn = document.querySelectorAll(".next_btn_container");
+// nextBtn.forEach(function(item) {
+//   item.addEventListener("click", function() {
+//     gsap.to(window, { duration: 0, scrollTo: {
+//       y: ".tabs_section",
+//       offsetY: 100,
+//     } });
+//   });
+// });
 
 
 // video mobile
@@ -137,7 +136,6 @@ function handleIntersection(entries, observer) {
       });
     } else {
       bullet.classList.remove('active');
-      // aggiungi funzione per fare in modo che se nessuno dei due bullet ha classe active di default viene insierita al primo bullet
       if(!bullets[0].classList.contains('active') && !bullets[1].classList.contains('active')){
         bullets[0].classList.add('active');
       }
@@ -166,9 +164,7 @@ function handleIntersection2(entries, observer) {
   });
 }
 
-// Seleziona il container delle card
 const cardContainer = document.querySelector('card_content_container');
-// Seleziona tutte le card all'interno del container
 const content_card = document.querySelectorAll('.principi_card');
 const observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
 let bullets1 = document.querySelectorAll('.section_scelta .bullet');
