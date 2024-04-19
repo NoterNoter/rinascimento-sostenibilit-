@@ -134,6 +134,13 @@ module.exports = {
       filename: "index.html",
       template: path.resolve(environment.paths.source, "index.html"),
       favicon: path.resolve(environment.paths.source, 'images', 'favicon.ico'),
+    }),
+    new HTMLWebpackPlugin({
+      inject: true,
+      hash: false,
+      filename: "uk-en/index.html",
+      template: path.resolve(environment.paths.source, "uk-en/index.html"),
+      favicon: path.resolve(environment.paths.source, 'images', 'favicon.ico'),
     })
   ],
   // .concat(htmlPluginEntries),
