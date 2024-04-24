@@ -79,14 +79,6 @@ navTabs.forEach((item)=>{
         y: ".tabs_section",
         offsetY: 100,
       } });
-
-      if(tabId == "careguide"){
-        gsap.to(".card_scrollUp", {
-          y: "0%",
-          stagger: 0.2, 
-          duration: 1
-        })
-      }
   });
 })
 
