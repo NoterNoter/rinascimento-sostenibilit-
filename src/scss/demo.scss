@@ -850,6 +850,9 @@ main{
 #careguide{
   display: none;
   @include container_big;
+  .tab_headline{
+    @include container_small;
+  }
 }
 
 .solo_text_component{
@@ -1632,6 +1635,7 @@ main{
 
 // care guide tab
 
+
 .careguide_cards_section{
   display: flex;
   flex-direction: column;
@@ -1639,6 +1643,20 @@ main{
   justify-content: center;
   margin-top: 50px;
   margin-bottom: 60px;
+  @media screen and (max-width: 1024px) {
+    margin-left: -32px;
+    margin-right: -32px;
+    overflow: hidden;
+    overflow-x: scroll;
+  }
+  .careguide_subtitle{
+    @media screen and (max-width: 1024px) {
+      position: sticky;
+      left: 0px;
+      width: 100%;
+      text-align: center;
+    }
+  }
   .careguide_cards{
     display: flex;
     align-items: center;
@@ -1652,8 +1670,14 @@ main{
     overflow-x: scroll;
     gap: 0px;
     margin-top: 50px;
+    @media screen and (max-width: 1024px) {
+      padding: 0 32px;
+      max-width: unset;
+      width: unset;
+    }
     .careguide_card{
       width: 33.3%;
+      min-width: 320px;
       min-height: 400px;
       display: flex;
       flex-direction: column;
@@ -1687,15 +1711,19 @@ main{
     display: inline-block;
     @include aspect(16, 9);
     vertical-align: middle;
-    width: 380px !important;
+    width: 250px;
     video{
       width: 100%;
       height: 100%;
       border-radius: $radius;
     }
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
   .careguide_accordion_title{
     display: flex;
+    flex:1;
     flex-direction: row-reverse;
     justify-content: space-between;
     .content_box{
@@ -1716,6 +1744,10 @@ main{
   }
 }
 
+.careguide_accordion_video{
+  margin-bottom: 60px;
+}
+
 .careguide_accordion_inner_text{
   .question{
     h6{
@@ -1733,7 +1765,7 @@ main{
 }
 
 .faq_text{
-  width: 100% !important;
+  width: 90% !important;
   font-size: 14px;
   color: #666666;
 }
