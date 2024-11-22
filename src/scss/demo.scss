@@ -1771,3 +1771,9 @@ main{
   font-size: 14px;
   color: #666666;
 }
+
+@media screen and (max-width: 768px) {
+  .mobile_custom_container{
+    padding-bottom: 120% !important;
+  }
+}
